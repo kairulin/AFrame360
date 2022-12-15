@@ -1,3 +1,4 @@
+
 // 隱藏資訊安紐
 function itemVisible(visible, ...props) {
   props.map((item) => {
@@ -8,16 +9,7 @@ function itemVisible(visible, ...props) {
 function changeSkyArrow(img) {
   var mySky = document.querySelector("#my-sky");
   mySky.setAttribute("src", img);
-  // door
-  var doorArrow = document.querySelector("#door-arrow");
-  //  porch
-  var porchArrow = document.querySelector("#porch-arrow");
-  porchArrow.classList.remove("clickable");
-  porchArrow.setAttribute("visible", false);
-  // meeting
-  var meetingArrow = document.querySelector("#meeting-arrow");
-  meetingArrow.classList.remove("clickable");
-  meetingArrow.setAttribute("visible", false);
+ 
 
   function callItemVisible(visibleBoolean) {
     itemVisible(
@@ -41,6 +33,9 @@ function changeSkyArrow(img) {
       doorArrow.classList.add("clickable");
       doorArrow.setAttribute("change-site", "img: #door");
       doorArrow.setAttribute("rotation", "0 90 0");
+      // doorArrow.setAttribute("rotation", "-90 0 0");
+
+      
       doorArrow.setAttribute("position", "0 -2 -15");
       // porch
       porchArrow.classList.add("clickable");
@@ -55,6 +50,7 @@ function changeSkyArrow(img) {
       doorArrow.setAttribute("visible", true);
       doorArrow.setAttribute("change-site", "img:#administrative");
       doorArrow.setAttribute("rotation", "0 55 0");
+      // doorArrow.setAttribute("rotation", "90 145 0");
       doorArrow.setAttribute("position", "9.305 -7.33 -15");
 
       // porch
@@ -90,6 +86,8 @@ function changeSkyArrow(img) {
       doorArrow.classList.add("clickable");
       doorArrow.setAttribute("change-site", "img:#administrative");
       doorArrow.setAttribute("rotation", "0 90 0");
+      // doorArrow.setAttribute("rotation", "-90 0 0");
+
       doorArrow.setAttribute("position", "0 -2 -15");
       doorArrow.setAttribute("visible", true);
       //  porch
@@ -164,6 +162,8 @@ function itemLeave() {
   function mouseLeave(...props) {
     props.map((item) => {
       item.setAttribute("scale", "0.1 0.1 0.1");
+      // item.setAttribute("scale", "0.1 0.01 0.1");
+
     });
   }
   mouseLeave(
@@ -183,6 +183,8 @@ function itemEnter(item) {
 
   function mouseEnter(itemEnter) {
     itemEnter.setAttribute("scale", "0.15 0.15 0.15");
+    // itemEnter.setAttribute("scale", "0.15 0.01 0.15");
+
   }
   switch (item) {
     case ".bike-info":

@@ -1,3 +1,4 @@
+
 AFRAME.registerComponent("change-site", {
   schema: {
     img: { type: "string" },
