@@ -1,0 +1,456 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="./change-site.js"></script>
+    <script src="./sky-arrow-site.js"></script>
+
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="guide-box">
+      <img class="logo" src="./assets/logo.png"></img>
+      <button id="button-door" onclick="changeFunction('#door')">大門口</button>
+      <button
+        id="button-administrative"
+        onclick="changeFunction('#administrative')"
+      >
+        行政大樓
+      </button>
+      <button id="button-doporchor" onclick="changeFunction('#porch')">
+        玄關
+      </button>
+
+      <button
+        class="meeting-room"
+        id="button-meeting"
+        onclick="changeFunction('#meeting')"
+      >
+        會議室
+        <div>></div>
+      </button>
+    </div>
+    <!-- 自行車資訊 -->
+    <div class="bike-menu">
+      <img src="./assets/meetingInfo/bike.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 自行車</div>
+        <span>金屬、複材接著、堅韌、耐衝擊、抗剝離</span>
+        <p>此產業一直以來就是歐美日德等國家主導開發產品，且涵蓋設計應用領域進而擴及到休閒消費端，而台灣從早期一直都
+          只能是代工生產的角色，廠家只能賺取微薄的利潤。直到台中的某大廠開創自由品牌成功後，台灣廠商才陸續有自行車廠
+          也開始自創品牌之路，勤奮的台灣人民憑藉著苦幹肯幹的精神，辛勤努力專研於高品質產品的研發設計工作，進而延伸到
+          精細的生產量產製程的研究，經過十年時間不斷努力，終於在國際市場上，打響好幾個知名品牌且揚名國際。此產品對於
+          結構高強度膠材的需求，也從早期的鐵製或是鋁製自行車的螺絲用的防鬆脫的厭氧螺絲及厭氧軸承固定膠，進展到碳纖維
+          與鋁合金複合車架，前後叉，座管，座墊，輪框與各種金屬部件的接著。永寬與各大廠合作開發了兩年時間後，終於成功
+          打入台中某國際大廠的車架三通五通的接著材料供應鏈，同時擴展出前後叉，座管，座墊等等部件的應用。直到今日，永
+          寬在此市場的市佔率已經高達六成之多，且仍然還在繼續努力的與自行車產業合作開發更高階的電動自行車更具未來性的
+          應用。
+        </p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(bikeMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- 電動汽車馬達資訊 -->
+    <div class="motor-menu">
+      <img src="./assets/meetingInfo/motor.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 電動汽車馬達</div>
+        <p>在全電動汽車沒有全方位的提供一次充電達到消費者安心的使用里程之前，油電混合車是最讓消費者可以安心接受的方案
+          。永寬五年前與台灣知名自動化電機大廠，一起合作開發混合電動車馬達的磁鐵接著，定子線圈的灌注等高性能樹脂的應用
+          。最終使用在某歐洲市佔最高的品牌車廠上。並且成功通過實車測試20萬公里至今約略50萬公里沒有出現任何問題。這是永
+          寬引以為傲的成績，也推薦給你來共享此產品優異的特性。</p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(motorMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- LDE車燈應用資訊 -->
+    <div class="led-menu">
+      <img src="./assets/meetingInfo/led.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 LDE車燈應用</div>
+        <span>耐候性能優越，符合IPX7防水等級
+          LED車燈密封灌注最佳選擇
+          </span>
+        <p>
+          LED應用在汽機車產業的巴士，卡車，專業車上的照明模組，因為是戶外應用所以特別需要做防水的封裝，永寬使用環氧樹
+          脂來成功替代使用已久的有機矽膠密封，進而達到更好的接著性耐候性，同時不會有傷害塑膠燈殻的顧慮。
+        </p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(ledMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- 醫療資訊 -->
+    <div class="medical-menu">
+      <img src="./assets/meetingInfo/medical1.png" alt=""></img>
+      <img src="./assets/meetingInfo/medical2.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 醫療接著膠材</div>
+        <p>
+          目前生物科技的產業在台灣發展的歷史已經超過20年，2005年之後相關產品發表數量就是倍數的成長，尤其是醫療器材的部分
+          ，有醫療用呼吸及麻醉用面罩，醫療注射針頭，各種醫療過程人類排放廢物的收集器等等，都需要膠材的黏接組裝，也同時需
+          要有醫療級的認證才能適用在此產業。
+        </p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(medicalMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- 胎壓資訊 -->
+    <div class="tire-menu">
+      <img src="./assets/meetingInfo/tire1.png" alt=""></img>
+      <img src="./assets/meetingInfo/tire2.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 胎壓偵測系統</div>
+        <p>
+          汽機車行駛在道路上，甶於近年來的交通事故是導因於爆胎現象並且有上升的趨勢，所以各國家國際法規都依序將胎壓的監控系
+          統納入標準配備，當然對於封裝材料的要求也就更加的嚴格，永寬重視此應用市場的發展，已經取得 IATF16949的認證，產品
+          的研發製造品管包裝出貨都是嚴格地把關，經過兩年的努力我們已經成功供貨台灣三大廠之二有五年之久，新產品的合作開發也
+          持續進行中。          
+        </p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(tireMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- miniLED資訊 -->
+    <div class="miniled-menu">
+      <img src="./assets/meetingInfo/miniled.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 MiniLED</div>
+        <p>
+          Mini LED小間距為點間距小於等於2.5毫米的顯示屏，具有媲美液晶顯示的效果，亮度遠超液晶的2-3倍，對比度更強，且100%覆
+          蓋色域709等特點。Micro LED超小間距為點間距小於等於1.1毫米的顯示屏，是在基板上經由紅、綠、藍三色的微型 LED 排列來
+          作畫面顯示        
+        </p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(miniledMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- 電桿資訊 -->
+    <div class="electric-menu">
+      <img src="./assets/meetingInfo/electric.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 電桿應用</div>
+        <span>一體成形為型電桿-冷熱壓共用
+          非溶劑型磁封膠-讓磁粉添加量高
+          </span>
+        <p>
+          此行業的發展趨勢是更微小化、更薄型化，所以對於膠材的要求也是越來越高，因為接著材料幾乎都是歐美日廠商獨佔的局面。亞洲
+          需要一家可以供應此產業鏈的膠材廠商，來做到最佳的品質供貨兼具的高效益公司，因此永寬也就走在產業需求的前端，來積極投入
+          人力來開發可以滿足客戶需求的產品。
+        </p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(electricMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- 微型揚聲器資訊 -->
+    <div class="speaker-menu">
+      <img src="./assets/meetingInfo/speaker.png" alt=""></img>
+      <div class="info">
+        <div class="title">產品介紹 微型揚聲器接著密封膠</div>
+        <span>耐高溫、耐候佳、耐落摔、抗震動
+          </span>
+        <p>
+          由於科技多媒體產品越來越強調音質、功率及厚薄度，此系列的接著劑可以提供您的產品在高功率與平坦的頻率響應曲線皆有好的表現
+          ，且皆可發出高品質的和絃鈴聲，此系列產品適用於最先進的數位資訊、通訊設備、高階中階手機，平板及筆記型多媒體產品的部件接
+          著及引線固定補強，並可以應用於產品的防水密封之附加用途此接著材料適用於高品質電聲元件（蜂鳴器,電磁式蜂鳴器,壓電式蜂鳴器
+          ,電磁蜂鳴器,壓電蜂鳴器,警報器,喇叭,小喇叭,微型喇叭,薄膜喇叭,紙盆喇叭,橢圓形喇叭,方型喇叭,音箱喇叭,喇叭音箱,喇叭零件,
+          受話器,麥克風,電容式麥克風,駐極體麥克風...）的製作，我們研發出配方獨特的UV接著劑並結合最新的科技和具有專業背景的夥伴，
+          利用最尖端的儀器設備和熟練的操作技巧，發展適用於電子產業所需要的產品解決方案！我們有充分的實務經驗，可以提供高品質及相
+          關的產品與相關的應用技術服務，最新一代的產品線，也都可以符合最新的環保要求，可以將產品的性能往極致的方向邁進。
+        </p>
+      </div>
+      <button class="close-btn" onclick="closeFunction(speakerMenu)">
+        <img src="./assets/close.png" alt="">
+        <span >關閉</span>
+      </button>
+    </div>
+    <!-- 光學鏡頭接著密封膠 -->
+    <div class="lens-menu">
+     <img src="./assets/meetingInfo/lens1.png" alt=""></img>
+     <img src="./assets/meetingInfo/lens2.png" alt=""></img>
+     <div class="info">
+       <div class="title">產品介紹 光學鏡頭接著密封膠</div>
+       <span>低揮發，低收縮，低溫固化
+         </span>
+       <p>
+         由於光電科技多媒體產品越來越強調光學感測的多元應用，從照相，攝影，條碼掃瞄，指紋辨識，人臉辨識等等生物識別等模組，每隔
+         一段時間就會演進出很多新型結構的產品。因此永寬每三年就會推出一系列對應各種模組結構應用的接著劑，來滿足此產業的各種新的
+         應用需求，包括作業性，更高階的環境測試標準，更環保的原物料管控要求，因此更高效率的，更高性價比的產品因應而生。現今的鏡
+         頭模組更加廣泛應用於電動車，公共場所的安全監控系統，航空及外太空，精密醫學器件等等場域上，所以對於接著，密封定位等的材
+         料的要求等級拉高很多，且對於環境保護要求甚高，使得很多化學原物料不能使用，更讓每家材料開發商師透腦筋，紛紛尋求上游原料
+         商配合開發環保材料來因應。
+       </p>
+     </div>
+     <button class="close-btn" onclick="closeFunction(lensMenu)">
+       <img src="./assets/close.png" alt="">
+       <span >關閉</span>
+     </button>
+    </div>
+    <!-- 光學鏡頭接著密封膠 -->
+    <div class="communication-menu">
+     <img src="./assets/meetingInfo/communication.png" alt=""></img>
+     <div class="info">
+       <div class="title">產品介紹 光通訊-5G戰場，由我主宰</div>
+       <span>低揮發，低收縮，低溫固化
+         </span>
+       <p>
+        此產業的應用非常的廣泛, 有光電轉換器, 光接收器, 接插線, 增訊器, 雙向接頭, DWDM等等的產品, 我們主要供應此產業的接著固定應用,產品主要的特點有：
+        <br>
+        1.   低收縮不影響光的傳導, 具有抗垂流特性的光硬化樹脂	
+        <br>
+        2.   光學部件接著特性佳, 折射率符合業界要求			
+        <br>
+        3.   符合精細作業的各項細節要求, 滿足業界的合適作業工序					
+        <br>
+        4.   耐高溫, 耐冷熱循環性, 耐老化性佳, 雙液型環氧比例10:1低過敏性不傷手的環保產品	
+        <br>
+        5.   光固化樹脂, 光固化兼熱固化陽離子環氧, 單組份及雙組份的耐高溫環氧樹脂四種類別, 物性規格比對美國及日本, 且包裝完善, 品質穩定	
+       </p>
+     </div>
+     <button class="close-btn" onclick="closeFunction(communicationMenu)">
+       <img src="./assets/close.png" alt="">
+       <span >關閉</span>
+     </button>
+    </div>
+
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="arrow" src="./assets/arrow/arrow.gltf"></a-asset-item>
+        <a-asset-item id="info" src="./assets/info/info.gltf"></a-asset-item>
+
+        <img id="door" src="./assets/sky/door.jpg" />
+        <img id="administrative" src="./assets/sky/administrative.jpg" />
+        <img id="porch" src="./assets/sky/porch.jpg" />
+        <img id="meeting" src="./assets/sky/meeting.jpg" />
+      </a-assets>
+      <a-camera>
+        <a-cursor raycaster="objects: .clickable"> </a-cursor>
+      </a-camera>
+      <!-- bike -->
+      <a-entity
+        gltf-model="#info"
+        scale="0.1 0.1 0.1"
+        rotation="0 0 0"
+        position="-3.032 0.895 -3.000"
+        class="clickable"
+        call-info="data:.bike-info;index:0"
+        id="bike-info-btn"
+      >
+      </a-entity>
+      <!-- 電動汽車馬達motor -->
+      <a-entity
+        gltf-model="#info"
+        scale="0.1 0.1 0.1"
+        rotation="0 0 0"
+        position="-1.532 0.925 -3.000"
+        class="clickable"
+        call-info="data:.motor-info;index:1"
+        id="motor-info-btn"
+      >
+      </a-entity>
+      <!-- led -->
+      <a-entity
+        gltf-model="#info"
+        scale="0.1 0.1 0.1"
+        rotation="0 0 0"
+        position="-0.190 0.945 -3.000"
+        class="clickable"
+        call-info="data:.led-info;index:2"
+        id="led-info-btn"       
+      >
+      </a-entity>
+      <!-- medical -->
+      <a-entity
+      gltf-model="#info"
+      scale="0.1 0.1 0.1"
+      rotation="0 0 0"
+      position="1.290 0.955 -3.000"
+      class="clickable"
+      call-info="data:.medical-info;index:3"
+      id="medical-info-btn"       
+      >
+      </a-entity>
+      <!-- tire -->
+      <a-entity
+      gltf-model="#info"
+      scale="0.1 0.1 0.1"
+      rotation="0 0 0"
+      position="2.590 0.965 -3.000"
+      class="clickable"
+      call-info="data:.tire-info;index:4"
+      id="tire-info-btn"       
+      >
+      </a-entity>
+      <!-- miniLED -->
+      <a-entity
+      gltf-model="#info"
+      scale="0.1 0.1 0.1"
+      rotation="0 180 0"
+      position="2.890 0.965 3.000"
+      class="clickable"
+      call-info="data:.miniled-info;index:5"
+      id="miniled-info-btn"       
+      >
+      </a-entity>
+      
+      <!-- electric -->
+      <a-entity
+      gltf-model="#info"
+      scale="0.1 0.1 0.1"
+      rotation="0 180 0"
+      position="1.690 0.985 3.000"
+      class="clickable"
+      call-info="data:.electric-info;index:6"
+
+      id="electric-info-btn"       
+      >
+      </a-entity>
+      <!-- speaker -->
+      <a-entity
+      gltf-model="#info"
+      scale="0.1 0.1 0.1"
+      rotation="0 180 0"
+      position="0.290 1.005 3.000"
+      class="clickable"
+      call-info="data:.speaker-info;index:7"
+      id="speaker-info-btn"       
+      >
+      </a-entity>
+      <!-- lens -->
+      <a-entity
+      gltf-model="#info"
+      scale="0.1 0.1 0.1"
+      rotation="0 180 0"
+      position="-1.090 1.005 3.000"
+      class="clickable"
+      call-info="data:.lens-info;index:8"
+      id="lens-info-btn"       
+      >
+      </a-entity>
+      <!-- communication -->
+      <a-entity
+      gltf-model="#info"
+      scale="0.1 0.1 0.1"
+      rotation="0 180 0"
+      position="-2.190 1.005 3.000"
+      class="clickable"
+      call-info="data:.communication-info;index:9"
+      id="communication-info-btn"       
+      >
+      </a-entity>
+
+      <!-- door -->
+      
+      <a-entity
+        gltf-model="#arrow"
+        scale="1 1 1"
+        rotation="0 90 0"
+        position="0 -2 -15"
+        class="clickable"
+        change-site="img:#administrative"
+        id="door-arrow"
+      >
+      </a-entity>
+
+      <!--administrative  -->
+      <a-entity
+        gltf-model="#arrow"
+        scale="0.5 0.5 0.5"
+        rotation="0 195 0"
+        position="-3 -1 1"
+        class="clickable"
+        change-site="img:#porch"
+        id="porch-arrow"
+      ></a-entity>
+
+      <!--porch  -->
+      <a-entity
+        gltf-model="#arrow"
+        scale="0.5 0.5 0.5"
+        rotation="0 195 0"
+        position="-3 -1 1"
+        class="clickable"
+        change-site="img:#meeting"
+        id="meeting-arrow"
+      ></a-entity>
+
+      <!-- <a-triangle  width="4" height="4"></a-triangle> -->
+      <a-sky id="my-sky" src="#door" rotation="0 270 0"> </a-sky>
+    </a-scene>
+  </body>
+  <script>   
+
+    // 資訊按鈕
+    var bikeInfo = document.querySelector("#bike-info-btn");
+    var motorInfo = document.querySelector("#motor-info-btn");
+    var ledInfo = document.querySelector("#led-info-btn");
+    var medicalInfo = document.querySelector("#medical-info-btn");
+    var tireInfo = document.querySelector("#tire-info-btn");
+    var miniledInfo = document.querySelector("#miniled-info-btn");
+    var electricInfo = document.querySelector("#electric-info-btn");
+    var speakerInfo = document.querySelector("#speaker-info-btn");
+    var lensInfo = document.querySelector("#lens-info-btn");
+    var communicationInfo = document.querySelector("#communication-info-btn");
+    // 一開始隱藏按鈕
+    itemVisible(
+        false,
+        bikeInfo,
+        motorInfo,
+        ledInfo,
+        medicalInfo,
+        tireInfo,
+        miniledInfo,
+        electricInfo,
+        speakerInfo,
+        lensInfo,
+        communicationInfo
+      );
+      // 改變場景和箭頭位置
+    function changeFunction(img) {   
+      changeSkyArrow(img)
+    }
+    //  一開始把資訊關閉
+    function startClose(...props){
+      props.map(item=>item.style.display="none")
+    }
+    function closeFunction(selectData){     
+      selectData.style.display="none"
+    }
+
+    var bikeMenu = document.querySelector(".bike-menu")
+    var motorMenu = document.querySelector(".motor-menu")
+    var ledMenu = document.querySelector(".led-menu")
+    var medicalMenu = document.querySelector(".medical-menu")
+    var tireMenu = document.querySelector(".tire-menu")
+    var miniledMenu = document.querySelector(".miniled-menu")
+    var electricMenu = document.querySelector(".electric-menu")
+    var speakerMenu = document.querySelector(".speaker-menu")
+    var lensMenu = document.querySelector(".lens-menu")
+    var communicationMenu = document.querySelector(".communication-menu")
+    
+    startClose(
+      bikeMenu,
+      motorMenu,
+      ledMenu,
+      medicalMenu,
+      tireMenu,
+      miniledMenu,
+      electricMenu,
+      speakerMenu,
+      lensMenu,
+      communicationMenu,
+    )
+  </script>
+</html>
