@@ -115,3 +115,9 @@ p {
   position: relative;
   color: white;
 }
+
+.test{
+  color: red !important;
+  height: 50px;
+  overflow: hidden;
+}
